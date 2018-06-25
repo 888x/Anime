@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0"
+    tools:context=".Main2Activity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginBottom="70dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:title="Blog">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:layout_collapseMode="none" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#33000000" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:title="Blog"
+                app:titleTextColor="@color/white"></android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="@drawable/material_background"
+        android:layout_gravity="bottom"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="true"
+        app:behavior_overlapTop="60dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@color/white"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7 Reasons The Best Thing You Can Do for Your Soul Is Travel."
+                android:textColor="#444"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                android:text="Escape to Center
+
+People call traveling to get away because humans tend to crave escape. It’s not always a negative signal. It’s a call to escape to center and press the reset button.
+
+You spend life living out specific roles you play, and you forget what you mean to yourself. Find your center, and allow your inner child a moment of playtime.
+Step out of the 9-5 Grind
+
+You get caught up in the nine-to-five grind and become consumed with meeting the next deadline or achieving the next big win. You live your life from a quantitative experience, rather than a qualitative one.
+
+Not many workers take their allotted vacation time, but taking those vacation days makes you a more productive worker. 55 percent of workers don’t take their vacation days, and once your basic needs are met — including the need to reset — you feel less tired and ready to do your job.
+Generate Creativity
+
+Shaking up your routine and seeing new sites sparks inspiration. You generate creativity as your five senses take in a new environment.
+
+It makes sense. The more you brain gets exposed to new senses and activities, the more it generates new thoughts, feelings and innovations from the inspiration gained. Ernest Hemingway used experiences from Spain and France as inspiration to write much of his work.
+
+digital nomad
+
+
+Lift Your Mood
+
+Many studies look at the mood-boosting high that getting away from it all gives you. One study found that vacationing significantly boosts mood and overall feelings of happiness and relaxation. Another study looked at the effects of leisure trips and found that taking a vacation reduces burnout and fortifies the mind against over-exhaustion once you return to work.
+Appreciate What You Have
+
+After enjoying the great wide world, you return home to appreciate what you have and let go of the little annoyances in life. Your patience and tolerance levels increase because you experience a different pace of life and practice these traits toward yourself as you travel and encounter differences in culture and linguistics.
+
+You may also witness poverty and other concerns as you travel, making you more aware of the world and those in it. You appreciate your privileges and don’t take them for granted.
+Widen Your Worldview, Deepen Your Trust
+
+Cross-cultural experiences increase faith in humanity, or what’s also known as generalized trust. Many people believe that all humans share an underlying essence. The effect can happen locally, too. Take a trip to a new neighborhood to experience a new culture, but if you want to shake up your worldview, travel far and wide.
+
+Feel moved by the different types of music in various countries. Wake up your taste buds with new spices and cuisines. See the joy and suffering in the world. Widen your worldview and deepen your trust. You’ll come to know yourself in new ways, too."
+                android:textColor="#888"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
