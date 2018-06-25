@@ -1,4 +1,33 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+
+// for Bintray
+def projectVersionCodeNr = Integer.parseInt(projectVersionCode);
+def libGit = libGit;
+def libUrl = libUrl;
+def libDescription = libDescription
+def libGroupId = libGroupId;
+def libRepo = libRepo;
+def libArtifactId = libArtifactId;
+
+bintray {
+    user = bintray_user
+    key = bintray_apikey
+    pkg {
+        repo = libRepo
+        name = libArtifactId
+        licenses = ['MIT']
+        vcsUrl = libGit
+        version {
+            name = projectVersionName
+            gpg {
+                sign = true
+                passphrase = bintray_gpg_phrase
+            }
+        }
+    }
+    configurations = ['archives']
+}
 
 ext {
     PUBLISH_GROUP_ID = 'in.bigbrains.anime'
@@ -7,10 +36,18 @@ ext {
 }
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword 'harry9784997896'
+            storeFile file('D:/Android/KeyStore/anime-key-store.jks')
+            storePassword 'harry9784997896'
+        }
+    }
     compileSdkVersion 27
-
-
-
+    lintOptions {
+        abortOnError false
+    }
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 27
@@ -20,14 +57,14 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
-
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true  // shrink
+            useProguard true    // obfuscate
+
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {

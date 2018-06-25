@@ -1,6 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'key0'
+            keyPassword 'harry9784997896'
+            storeFile file('D:/Android/KeyStore/anime-key-store.jks')
+            storePassword 'harry9784997896'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "in.bigbrains.animeapp"
@@ -12,8 +23,9 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
